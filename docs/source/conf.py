@@ -64,11 +64,12 @@ copyright = u'2017, Brendt Wohlberg'
 # built documents.
 #
 # The short X.Y version.
-module = '../../../../jonga.py' if on_rtd else '../../jonga.py'
+module = '../../jonga.py' if on_rtd else '../../jonga.py'
 with open(module) as f:
-    version = parse(next(filter(
-        lambda line: line.startswith('__version__'),
-        f))).body[0].value.s
+    modprs = parse(next(filter(
+        lambda line: line.startswith('__version__'), f)))
+    print(modprs)
+    version = modprs.body[0].value.s
 # The full version, including alpha/beta/rc tags.
 release = version
 
