@@ -95,6 +95,31 @@ shell
 from the root directory of the package.
 
 
+Documentation
+-------------
+
+Documentation is available online at
+`Read the Docs <http://jonga.rtfd.io/>`_, or can be built from the
+root directory of the source distribution by the command
+
+::
+
+   python3 setup.py build_sphinx
+
+in which case the HTML documentation can be found in the
+``build/sphinx/html`` directory (the top-level document is
+``index.html``).
+
+
+Contact
+-------
+
+Please submit bug reports, comments, etc. to brendt@ieee.org. Bugs and
+feature requests can also be reported via the
+`GitHub Issues interface <https://github.com/bwohlberg/jonga/issues>`_.
+
+
+
 
 License
 -------
