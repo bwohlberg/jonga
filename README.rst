@@ -4,6 +4,9 @@ Jonga
 .. image:: https://travis-ci.org/bwohlberg/jonga.svg?branch=master
     :target: https://travis-ci.org/bwohlberg/jonga
     :alt: Build Status
+.. image:: https://landscape.io/github/bwohlberg/jonga/master/landscape.svg?style=flat
+   :target: https://landscape.io/github/bwohlberg/jonga/master
+   :alt: Code Health
 .. image:: https://readthedocs.org/projects/jonga/badge/?version=latest
     :target: http://jonga.readthedocs.io/en/latest/?badge=latest
     :alt: Documentation Status
@@ -17,6 +20,8 @@ Jonga
     :target: https://github.com/bwohlberg/jonga
     :alt: Package License
 
+
+|
 
 Jonga is a Python package that generates a directed graph representing
 function calls within a block of Python code, intended for inclusion
