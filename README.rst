@@ -1,6 +1,23 @@
 Jonga
 =====
 
+.. image:: https://travis-ci.org/bwohlberg/jonga.svg?branch=master
+    :target: https://travis-ci.org/bwohlberg/jonga
+    :alt: Build Status
+.. image:: https://readthedocs.org/projects/jonga/badge/?version=latest
+    :target: http://jonga.readthedocs.io/en/latest/?badge=latest
+    :alt: Documentation Status
+.. image:: https://badge.fury.io/py/jonga.svg
+    :target: https://badge.fury.io/py/jonga
+    :alt: PyPi Release
+.. image:: https://img.shields.io/pypi/pyversions/jonga.svg
+    :target: https://github.com/bwohlberg/jonga
+    :alt: Supported Python Versions
+.. image:: https://img.shields.io/pypi/l/jonga.svg
+    :target: https://github.com/bwohlberg/jonga
+    :alt: Package License
+
+
 Jonga is a Python package that generates a directed graph representing
 function calls within a block of Python code, intended for inclusion
 in Sphinx package documentation. There are a number of
