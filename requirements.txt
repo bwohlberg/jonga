@@ -1,0 +1,6 @@
+pygraphviz
+pytest-runner
+pytest
+sphinx
+numpydoc
+sphinx_bootstrap_theme

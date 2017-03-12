@@ -1,0 +1,12 @@
+.*~
+__pycache__
+*.pyc
+dist
+venv
+build
+jonga.egg-info
+.eggs
+.cache
+.ipynb_checkpoints
+*.svg
+
