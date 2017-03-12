@@ -2,8 +2,6 @@
 
 import sys
 import os
-from builtins import next
-from builtins import filter
 from ast import parse
 import re, shutil, tempfile
 
