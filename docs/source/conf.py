@@ -15,6 +15,14 @@ import sphinx_bootstrap_theme
 
 # -- General configuration ------------------------------------------------
 
+on_rtd = os.environ.get('READTHEDOCS') == 'True'
+
+if on_rtd:
+    print('Building on ReadTheDocs')
+    print
+    print("Current working directory: {}" . format(os.path.abspath(os.curdir)))
+
+
 # If your documentation needs a minimal Sphinx version, state it here.
 #needs_sphinx = '1.0'
 
@@ -56,7 +64,8 @@ copyright = u'2017, Brendt Wohlberg'
 # built documents.
 #
 # The short X.Y version.
-with open('../../jonga.py') as f:
+module = 'jonga.py' if on_rtd else '../../jonga.py'
+with open(module) as f:
     version = parse(next(filter(
         lambda line: line.startswith('__version__'),
         f))).body[0].value.s
@@ -283,14 +292,6 @@ texinfo_documents = [
 
 # If true, do not generate a @detailmenu in the "Top" node's menu.
 #texinfo_no_detailmenu = False
-
-
-on_rtd = os.environ.get('READTHEDOCS') == 'True'
-
-if on_rtd:
-    print('Building on ReadTheDocs')
-    print
-    print("Current working directory: {}" . format(os.path.abspath(os.curdir)))
 
 
 # Sort members by type
