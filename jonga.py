@@ -16,7 +16,7 @@ import colorsys
 import pygraphviz as pgv
 
 
-__version__ = '0.0.1'
+__version__ = '0.0.2b1'
 __author__ = """Brendt Wohlberg <brendt@ieee.org>"""
 
 
