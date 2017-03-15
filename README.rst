@@ -19,7 +19,9 @@ Jonga
 .. image:: https://img.shields.io/pypi/l/jonga.svg
     :target: https://github.com/bwohlberg/jonga
     :alt: Package License
-
+.. image:: http://mybinder.org/badge.svg
+    :target: http://mybinder.org:/repo/bwohlberg/jonga
+    :alt: Binder
 
 |
 
