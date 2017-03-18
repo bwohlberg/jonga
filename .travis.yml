@@ -38,10 +38,10 @@ after_success:
 
 deploy:
   provider: pypi
-  server: https://testpypi.python.org/pypi
+  #server: https://testpypi.python.org/pypi
   user: brendt
   password:
     secure: nsBVXmfIrUIf2SNkpFTUmugNWRnZMyqdKfva6RYpHkWhZdGEAQDewlU6QNt9wd9rZWvS3wn2cK0YKr+irZ+XJcZFhXuaHba7Weo5vwchlono/gr45O07N4+hkE8ojL3sB14wnOrKUSsydYviPdTBZ++StCqaWoHtIDOFdILj9+bwq9xVp1WBFZVBA5FGc38RC0GXbWMiOPKDWHH1ciUlMdE6iT5wnSQf0opOj4rV7/xyYQy1g94UXyCRdwmOOeGYvuYx/kv9R6WzTEs9Li34fyoPD3rBG0JPWFaraistN4Z4j40+nGWhS2N9sZogLZYNjExeACH02o9kpgBm7HDsweb6lvTSHumrnW/wx1GbS04zhQ2QFJqbLrjWTdRp8Jrq2yhJvttEWI2WDwfbdL820rB5RQqoExEjEyxkFWjM8n45xD1iM/wKz2Oe2BmX+Pm3CacMTC9mcVQ1ubNr4MoYfcB4KXkI+sT5M16bRY77o7+Dm6UpuCojmZbHeyrwtcVxom+b6G6w5pzdeCLoEus/z1ppfc4sR7rc6vO7OZ7AdF9n5EkjU9D9sAxzu0f/x51zBsRu3B/R+0i+uEPdFOIxLZwzIXe0Sw3sEU+mveOSrkybzWbd6ukplbEB20mrDdbeQdkk4yguvBiZkeKH4Oyqn1HoYmMbpbkYI3LGyeS4LfA=
   on:
-    tags: false
+    tags: true
     branch: master

@@ -13,3 +13,5 @@ class TestSet01(object):
         ct.start()
         rec = re.compile('^[^\.]*.[^\.]*')
         ct.stop()
+        g = ct.graph()
+        s = str(ct)
