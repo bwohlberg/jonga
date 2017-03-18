@@ -26,15 +26,11 @@ install:
   - conda install --yes python=$TRAVIS_PYTHON_VERSION
   - conda install --yes pytest
   - pip install pygraphviz
-  - pip install codecov
   - python setup.py build
   - python setup.py install
 
 script:
-  - coverage run --source jonga -m py.test
-
-after_success:
-  - codecov
+  - python setup.py test
 
 deploy:
   provider: pypi
