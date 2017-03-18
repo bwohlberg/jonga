@@ -1,7 +1,5 @@
 import pytest
 
-import collections
-
 import re
 import jonga
 
