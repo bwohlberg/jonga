@@ -31,7 +31,7 @@ install:
   - python setup.py install
 
 script:
-  - coverage run --source sporco -m py.test
+  - coverage run --source jonga -m py.test
 
 after_success:
   - codecov
