@@ -1,4 +1,4 @@
-#-*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 # Copyright (C) 2017 by Brendt Wohlberg <brendt@ieee.org>
 # All rights reserved. GPLv2+ License.
 
@@ -45,14 +45,18 @@ def current_function(frame):
        code.co_name == '_removeHandlerRef':
         return None
 
-    # Solution follows that suggested at http://stackoverflow.com/a/37099372
-    lst = [referer for referer in gc.get_referrers(code)
-           if getattr(referer, "__code__", None) is code and
-           inspect.getclosurevars(referer).nonlocals.items() <=
-           frame.f_locals.items()]
-    if len(lst) > 0:
-        return lst[0]
-    else:
+    try:
+        # Solution follows suggestion at http://stackoverflow.com/a/37099372
+        lst = [referer for referer in gc.get_referrers(code)
+               if getattr(referer, "__code__", None) is code and
+               inspect.getclosurevars(referer).nonlocals.items() <=
+               frame.f_locals.items()]
+        if len(lst) > 0:
+            return lst[0]
+        else:
+            return None
+    except ValueError:
+        # inspect.getclosurevars can fail with ValueError: Cell is empty
         return None
 
 
