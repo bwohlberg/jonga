@@ -6,17 +6,16 @@
 
 import re
 import sys
-if sys.version_info < (3,3):
+if sys.version_info < (3, 3):
     raise RuntimeError('Module jonga requires Python version 3.3 or greater')
 import os
 import gc
 import inspect
-import colorsys
 
 import pygraphviz as pgv
 
 
-__version__ = '0.0.2b2'
+__version__ = '0.0.2b3'
 __author__ = """Brendt Wohlberg <brendt@ieee.org>"""
 
 
@@ -58,6 +57,29 @@ def current_function(frame):
     except ValueError:
         # inspect.getclosurevars can fail with ValueError: Cell is empty
         return None
+
+
+
+def function_qname(fnc):
+    """
+    Get qualified name of a function (the fully qualified name
+    without the module prefix)
+
+    Parameters
+    ----------
+    fnc : function reference
+    A function reference
+
+    Returns
+    -------
+    fqn : string
+    The qualified name the function
+    """
+
+    if fnc is None:
+        return ''
+    else:
+        return fnc.__qualname__
 
 
 
@@ -118,18 +140,26 @@ class CallTracer(object):
     Manage construction of a call graph for methods within a class hierarchy
     """
 
-    def __init__(self, srcflt=None, dstflt=None, fnmsub=None, grpflt=None,
-                 lnksub=None):
+    def __init__(self, srcmodflt=None, dstmodflt=None, srcqnmflt=None,
+                 dstqnmflt=None, fnmsub=None, grpflt=None, lnksub=None):
         """Initialise a CallTracer object.
 
         Parameters
         ----------
-        srcflt : None or regex string, optional (default None)
-          A regex for call filtering based on calling function fqname. A
+        srcmodflt : None or regex string, optional (default None)
+          A regex for call filtering based on calling function module. A
+          function call is only recorded if the regex matches the name of
+          the calling function module. If None, filtering is disabled.
+        dstmodflt : None or regex string, optional (default None)
+          A regex for call filtering based on caller function. A
+          function call is only recorded if the regex matches the name of
+          the called function module. If None, filtering is disabled.
+        srcqnmflt : None or regex string, optional (default None)
+          A regex for call filtering based on calling function qname. A
           function call is only recorded if the regex matches the name of
           the calling function. If None, filtering is disabled.
-        dstflt : None or regex string, optional (default None)
-          A regex for call filtering based on caller function fqname. A
+        dstqnmflt : None or regex string, optional (default None)
+          A regex for call filtering based on caller function qname. A
           function call is only recorded if the regex matches the name of
           the called function. If None, filtering is disabled.
         fnmsub : None or tuple of two regex strings, optional (default None)
@@ -144,15 +174,27 @@ class CallTracer(object):
         """
 
         # Regex for caller function module filtering
-        if srcflt is None:
-            srcflt = '.*'
+        if srcmodflt is None:
+            srcmodflt = '.*'
         # Regex for called function module filtering
-        if dstflt is None:
-            dstflt = srcflt
+        if dstmodflt is None:
+            dstmodflt = srcmodflt
         # Compiled regex for caller function module filtering
-        self.srcflt = re.compile(srcflt)
+        self.srcmodflt = re.compile(srcmodflt)
         # Compiled regex for called function module filtering
-        self.dstflt = re.compile(dstflt)
+        self.dstmodflt = re.compile(dstmodflt)
+
+        # Regex for caller function qname filtering
+        if srcqnmflt is None:
+            srcqnmflt = '.*'
+        # Regex for called function qname filtering
+        if dstqnmflt is None:
+            dstqnmflt = srcqnmflt
+        # Compiled regex for caller function qname filtering
+        self.srcqnmflt = re.compile(srcqnmflt)
+        # Compiled regex for called function qname filtering
+        self.dstqnmflt = re.compile(dstqnmflt)
+
         # Regex pair for function name replacment
         self.fnmsub = fnmsub
         # Regex for constructing function grouping string
@@ -186,14 +228,20 @@ class CallTracer(object):
         # Filter calling and called functions by module names
         src_mod = current_module_name(frame.f_back)
         dst_mod = current_module_name(frame)
-        if not self.srcflt.match(src_mod):
+        if not self.srcmodflt.match(src_mod):
             return
-        if not self.dstflt.match(dst_mod):
+        if not self.dstmodflt.match(dst_mod):
             return
 
         # Get calling and called functions
         src_func = current_function(frame.f_back)
         dst_func = current_function(frame)
+
+        # Filter calling and called functions by qnames
+        if not self.srcqnmflt.match(function_qname(src_func)):
+            return
+        if not self.dstqnmflt.match(function_qname(dst_func)):
+            return
 
         # Get calling and called function full names
         src_name = function_fqname(src_func)
@@ -209,14 +257,14 @@ class CallTracer(object):
             if src_name in self.fncts:
                 self.fncts[src_name][0] += 1
             else:
-                self.fncts[src_name] = [1,0]
+                self.fncts[src_name] = [1, 0]
 
         # Update called function count
         if dst_func is not None and src_func is not None:
             if dst_name in self.fncts:
                 self.fncts[dst_name][1] += 1
             else:
-                self.fncts[dst_name] = [0,1]
+                self.fncts[dst_name] = [0, 1]
 
         # Update caller/calling pair count
         if dst_func is not None and src_func is not None:
@@ -254,7 +302,7 @@ class CallTracer(object):
                     if ms in self.group:
                         self.group[ms].append(k)
                     else:
-                        self.group[ms] = [k,]
+                        self.group[ms] = [k, ]
 
 
 
@@ -320,7 +368,7 @@ class CallTracer(object):
 
         # Default colour generation function
         if clrgen is None:
-            clrgen = lambda n : self._clrgen(n, 0.330, 0.825)
+            clrgen = lambda n: self._clrgen(n, 0.330, 0.825)
 
         # Generate color list
         clrlst = clrgen(len(self.group))

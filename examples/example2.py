@@ -12,7 +12,7 @@ if __name__ == "__main__":
     # the empty string, and with groups defined by
     # the first part (i.e. before the first '.') of the fully
     # qualified name of the function *after* the string substitution
-    ct = jonga.CallTracer(srcflt='^xmpl', fnmsub=('^xmpl.', ''),
+    ct = jonga.CallTracer(srcmodflt='^xmpl', fnmsub=('^xmpl.', ''),
                           grpflt='^[^\.]*')
     # Construct object from example class
     c = xmpl.C()

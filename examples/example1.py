@@ -8,7 +8,7 @@ if __name__ == "__main__":
 
     # Construct call tracer object set to filter out calls of
     # functions/methods within module xmpl
-    ct = jonga.CallTracer(srcflt='^xmpl')
+    ct = jonga.CallTracer(srcmodflt='^xmpl')
     # Start call tracing
     ct.start()
 
@@ -28,7 +28,7 @@ if __name__ == "__main__":
     # functions/methods within module xmpl and with the displayed
     # function name constructed by replacing the initial 'xmpl.' with
     # the empty string
-    ct = jonga.CallTracer(srcflt='^xmpl', fnmsub=('^xmpl.', ''))
+    ct = jonga.CallTracer(srcmodflt='^xmpl', fnmsub=('^xmpl.', ''))
     # Start call tracing
     ct.start()
 
@@ -48,7 +48,7 @@ if __name__ == "__main__":
     # functions/methods within module xmpl and with groups defined by
     # the first part (i.e. before the first '.') of the fully
     # qualified name of the function
-    ct = jonga.CallTracer(srcflt='^xmpl', grpflt='^[^\.]*')
+    ct = jonga.CallTracer(srcmodflt='^xmpl', grpflt='^[^\.]*')
     # Start call tracing
     ct.start()
 

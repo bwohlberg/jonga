@@ -97,7 +97,7 @@ from the root directory of the package.
 Jupyter notebook versions of the example scripts are also included in
 the ``examples`` directory, and can be `viewed on nbviewer
 <http://nbviewer.jupyter.org/github/bwohlberg/jonga/blob/master/index.ipynb>`_.
-   
+
 
 
 Documentation
