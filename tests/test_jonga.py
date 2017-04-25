@@ -7,7 +7,7 @@ import jonga
 class TestSet01(object):
 
     def test_01(self):
-        ct = jonga.CallTracer(dstflt='^(re.|sre_)', grpflt='^[^\.]*')
+        ct = jonga.CallTracer(dstmodflt='^(re.|sre_)', grpflt='^[^\.]*')
         ct.start()
         rec = re.compile('^[^\.]*.[^\.]*')
         ct.stop()
