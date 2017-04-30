@@ -15,7 +15,7 @@ import inspect
 import pygraphviz as pgv
 
 
-__version__ = '0.0.2b3'
+__version__ = '0.0.2'
 __author__ = """Brendt Wohlberg <brendt@ieee.org>"""
 
 
