@@ -15,7 +15,7 @@ import inspect
 import pygraphviz as pgv
 
 
-__version__ = '0.0.2'
+__version__ = '0.0.3b1'
 __author__ = """Brendt Wohlberg <brendt@ieee.org>"""
 
 
@@ -204,6 +204,17 @@ class CallTracer(object):
             self.grpflt = re.compile(grpflt)
         # Regex for link target construction
         self.lnksub = lnksub
+
+        # Initialise dicts for recording call information
+        self.reset()
+
+
+
+    def reset(self):
+        """
+        Reset record of called functions, deleting all accumulated
+        call information
+        """
 
         # Dict associating function name with list containing counts
         # of occurrences in caller and called roles

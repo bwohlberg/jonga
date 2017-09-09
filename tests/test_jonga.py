@@ -15,3 +15,6 @@ class TestSet01(object):
         assert(g is not None)
         s = str(ct)
         assert(s != '')
+        ct.reset()
+        s = str(ct)
+        assert(s == '')
