@@ -357,7 +357,7 @@ class CallTracer(object):
 
 
     def graph(self, fnm=None, size=None, fntsz=None, fntfm=None, clrgen=None,
-              prog='dot'):
+              rmsz=False, prog='dot'):
         """
         Construct call graph
 
@@ -378,6 +378,10 @@ class CallTracer(object):
           should take an integer specifying the number of groups as an
           argument and return a list of graphviz-compatible colour
           specification strings.
+        rmsz : bool, optional (default False)
+          If True, remove the width and height specifications from an
+          SVG format output file so that the size scales properly when
+          viewed in a web browser
         prog : string, optional (default 'dot')
           Name of graphviz layout program to use.
 
@@ -445,10 +449,19 @@ class CallTracer(object):
 
         # Write graph file if filename provided
         if fnm is not None:
-            if os.path.splitext(fnm)[1] == 'dot':
+            ext = os.path.splitext(fnm)[1]
+            if ext == '.dot':
                 g.write(fnm)
             else:
-                g.draw(fnm)
+                if ext == '.svg' and rmsz:
+                    img = g.draw(format='svg').decode('utf-8')
+                    cp = re.compile(r'\n<svg width=\"[^\"]*\" '
+                                    'height=\"[^\"]*\"')
+                    img = cp.sub(r'\n<svg', img, count=1)
+                    with open(fnm, 'w') as fd:
+                        fd.write(img)
+                else:
+                    g.draw(fnm)
 
         # Return graph object
         return g

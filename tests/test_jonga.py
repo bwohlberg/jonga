@@ -37,3 +37,13 @@ class TestSet01(object):
             rec = re.compile('^[^\.]*.[^\.]*')
         assert(os.path.getsize(pth) > 0)
         os.remove(pth)
+
+
+    def test_04(self):
+        ct = jonga.CallTracer(dstmodflt='^(re.|sre_)', grpflt='^[^\.]*')
+        fd, pth = tempfile.mkstemp(suffix='.svg')
+        os.close(fd)
+        with jonga.ContextCallTracer(ct, pth, rmsz=True):
+            rec = re.compile('^[^\.]*.[^\.]*')
+        assert(os.path.getsize(pth) > 0)
+        os.remove(pth)
