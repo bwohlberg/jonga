@@ -15,8 +15,11 @@ import inspect
 import pygraphviz as pgv
 
 
-__version__ = '0.0.3b1'
+__version__ = '0.0.3b2'
 __author__ = """Brendt Wohlberg <brendt@ieee.org>"""
+
+
+__modulename__ = sys.modules[__name__].__name__
 
 
 def current_function(frame):
@@ -239,6 +242,13 @@ class CallTracer(object):
         # Filter calling and called functions by module names
         src_mod = current_module_name(frame.f_back)
         dst_mod = current_module_name(frame)
+
+        # Avoid tracing the tracer (specifically, call from
+        # ContextCallTracer.__exit__ to CallTracer.stop)
+        if src_mod == __modulename__ or dst_mod == __modulename__:
+            return
+
+        # Apply source and destination module filters
         if not self.srcmodflt.match(src_mod):
             return
         if not self.dstmodflt.match(dst_mod):
@@ -459,3 +469,71 @@ class CallTracer(object):
                 s += '%s  ' % l
             s += '\n'
         return s
+
+
+
+
+class ContextCallTracer(object):
+    """
+    A wrapper class for :class:`CallTracer` that enables its use as a
+    context manager. At the end of the context a call graph image is
+    generated and written to a path specified in the initialiser.
+    """
+
+    def __init__(self, ct, pth=None, **kwargs):
+        """
+        Initialise context manager.
+
+        Parameters
+        ----------
+        ct : class:`CallTracer` object
+          Specify the call tracer object to be used as a context manager.
+        pth : string or None, optional (default None)
+          Specify the path of the graph image file to be written by
+          :meth:`CallTracer.graph` at the end of the context. A graph is
+          not generated if it is ``None``.
+        **kwargs
+          Keyword arguments for :meth:`CallTracer.graph`
+        """
+
+        self.ct = ct
+        self.pth = pth
+        self.kwargs = kwargs
+
+
+
+    def __enter__(self):
+        """
+        Reset and start call tracer and return this ContextCallTracer
+        instance.
+        """
+
+        self.ct.reset()
+        self.ct.start()
+        return self
+
+
+
+    def __exit__(self, type, value, traceback):
+        """
+        Stop the call tracer and return True if no exception was raised
+        within the 'with' block, otherwise return False.
+        """
+
+        self.ct.stop()
+        if self.pth is not None:
+            self.ct.graph(self.pth, **self.kwargs)
+        if type:
+            return False
+        else:
+            return True
+
+
+
+    def calltracer(self):
+        """
+        Return the call tracer object associated with this ContextCallTracer
+        instance.
+        """
+
+        return self.ct
