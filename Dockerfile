@@ -13,7 +13,8 @@ RUN apt-get install -y graphviz
 USER main
 
 # Install requirements
-RUN /home/main/anaconda/envs/python3/bin/pip install -r requirements.txt
+# RUN /home/main/anaconda/envs/python3/bin/pip install -r requirements.txt
+RUN /home/main/anaconda/envs/python3/bin/pip install pygraphviz
 
 # Install jonga
 RUN /home/main/anaconda/envs/python3/bin/python setup.py install
