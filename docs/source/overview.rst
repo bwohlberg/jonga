@@ -15,6 +15,8 @@ vizualizations for inclusion within package documentation. In
 particular, none of these other packages correctly identifies method
 classes within a hierarchy of derived classes.
 
+Jonga is used to generate call graphs to help document the relatively complex class structure in the `SPORCO <http://sporco.readthedocs.io/en/latest/>`_ package, as illustrated in `this example <http://sporco.readthedocs.io/en/latest/_static/jonga/cbpdndl_solve.svg>`_ (note that the method names are clickable, linking to the corresponding entries in the documentation).
+
 
 
 Usage Examples
@@ -40,6 +42,9 @@ shell
 
 
 from the root directory of the package.
+
+
+`Jupyter Notebook <http://jupyter.org/>`_ versions of the example scripts are also available in the same directory. The notebooks can also be viewed online via `nbviewer <https://nbviewer.jupyter.org/github/bwohlberg/jonga/blob/master/index.ipynb>`_.
 
 
 
