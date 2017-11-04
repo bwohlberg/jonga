@@ -8,7 +8,7 @@ USER root
 
 # Add dependency
 RUN apt-get update
-RUN apt-get install -y python-pygraphviz
+RUN apt-get install -y python3-pygraphviz
 
 USER main
 
