@@ -17,4 +17,7 @@ USER main
 # RUN /home/main/anaconda/envs/python3/bin/pip install pygraphviz
 
 # Install jonga
-RUN /home/main/anaconda/envs/python3/bin/python setup.py install
+# RUN /home/main/anaconda/envs/python3/bin/python setup.py install
+
+RUN pwd
+RUN ls
