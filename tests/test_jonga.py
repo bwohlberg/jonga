@@ -30,7 +30,7 @@ class TestSet01(object):
 
 
     def test_03(self):
-        ct = jonga.CallTracer(dstmodflt='^(re.|sre_)', grpflt='^[^\.]*')
+        ct = jonga.CallTracer(grpflt='^[^\.]*')
         fd, pth = tempfile.mkstemp(suffix='.svg')
         os.close(fd)
         with jonga.ContextCallTracer(ct, pth):
@@ -40,7 +40,7 @@ class TestSet01(object):
 
 
     def test_04(self):
-        ct = jonga.CallTracer(dstmodflt='^(re.|sre_)', grpflt='^[^\.]*')
+        ct = jonga.CallTracer(grpflt='^[^\.]*')
         fd, pth = tempfile.mkstemp(suffix='.svg')
         os.close(fd)
         with jonga.ContextCallTracer(ct, pth, rmsz=True):
