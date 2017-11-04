@@ -8,12 +8,12 @@ USER root
 
 # Add dependency
 RUN apt-get update
-RUN apt-get install -y python3-pygraphviz
+RUN apt-get install -y graphviz libgraphviz-dev pkg-config
 
 USER main
 
 # Install requirements
-RUN /home/main/anaconda/envs/python3/bin/pip install matplotlib
+RUN /home/main/anaconda/envs/python3/bin/pip install pygraphviz matplotlib
 
 # The notebooks should be run from the current version of jonga in the
 # GitHub repo, but since the correct configuration for mybinder.org is
