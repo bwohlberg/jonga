@@ -19,7 +19,9 @@ Jonga
 .. image:: https://img.shields.io/pypi/l/jonga.svg
     :target: https://github.com/bwohlberg/jonga
     :alt: Package License
-
+.. image:: http://mybinder.org/badge.svg
+    :target: https://mybinder.org/v2/gh/bwohlberg/jonga/master?filepath=index.ipynb
+    :alt: Binder
 |
 
 Jonga is a Python package that generates a directed graph representing
