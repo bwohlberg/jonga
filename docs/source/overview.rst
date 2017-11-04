@@ -44,8 +44,7 @@ shell
 from the root directory of the package.
 
 
-`Jupyter Notebook <http://jupyter.org/>`_ versions of the example scripts are also available in the same directory. The notebooks can also be viewed online via `nbviewer <https://nbviewer.jupyter.org/github/bwohlberg/jonga/blob/master/index.ipynb>`_.
-
+`Jupyter Notebook <http://jupyter.org/>`_ versions of the example scripts are also available in the same directory. The notebooks can also be viewed online via `nbviewer <https://nbviewer.jupyter.org/github/bwohlberg/jonga/blob/master/index.ipynb>`_, or run interactively at `binder <http://mybinder.org/repo/bwohlberg/jonga>`_.
 
 
 Contact
