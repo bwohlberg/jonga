@@ -3,8 +3,8 @@ Jonga Release Notes
 ====================
 
 
-Version 0.0.3   (Not yet released)
-----------------------------------
+Version 0.0.3   (2017-11-04)
+----------------------------
 
 - Added a reset method to jonga.CallTracer
 - Added class jonga.ContextCallTracer providing a context manager wrapper
