@@ -58,7 +58,12 @@ there is no obvious replacement for `inspect.getclosurevars
 <https://docs.python.org/3/library/inspect.html#inspect.getclosurevars>`_,
 which was introduced in Python 3.3.
 
-The other major requirement is `pygraphviz <https://pygraphviz.github.io/>`_.
+The other major requirement is `pygraphviz <https://pygraphviz.github.io/>`_. Under Ubuntu Linux 16.04, this requirement can be installed by the command
+
+::
+
+  sudo apt-get install python3-pygraphviz
+
 
 
 Optional
