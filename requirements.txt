@@ -1,4 +1,5 @@
 pygraphviz
+matplotlib
 pytest-runner
 pytest
 sphinx
