@@ -133,5 +133,5 @@ License
 
 This package is made available under the terms of the GNU General
 Public License as published by the Free Software Foundation; either
-version 2 of the License (see the included ``LICENSE.rst`` file), or
+version 2 of the License (see the included ``LICENSE`` file), or
 (at your option) any later version.
