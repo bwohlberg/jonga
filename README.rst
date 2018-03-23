@@ -55,6 +55,7 @@ which was introduced in Python 3.3.
 
 The other major requirement is `pygraphviz <https://pygraphviz.github.io/>`_.
 
+At least on Ubuntu 16.04, you also need to `sudo apt-get install graphviz-dev`.
 
 Optional
 ^^^^^^^^
