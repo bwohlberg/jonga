@@ -57,7 +57,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Jonga'
-copyright = u'2017, Brendt Wohlberg'
+copyright = u'2017-2018, Brendt Wohlberg'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -331,7 +331,11 @@ def run_apidoc(_):
     opath = cpath
     print("Running sphinx-apidoc with output path " + opath)
     sys.stdout.flush()
-    sphinx.apidoc.main(['sphinx-apidoc', '-e', '-d', '2', '-o', opath, module])
+    if LooseVersion(sphinx.__version__) < LooseVersion('1.7.0'):
+        sphinx.apidoc.main(['sphinx-apidoc', '-e', '-d', '2', '-o', opath,
+                            module])
+    else:
+        sphinx.ext.apidoc.main(['-o', opath, '-e', '-d', '2', module])
     rst = os.path.join(cpath, 'jonga.rst')
     if os.path.exists(rst):
         rmsection(rst, r'^Module contents')
