@@ -47,7 +47,7 @@ setup(
     keywords         = ['Function call graph', 'Module documentation'],
     platforms        = 'Any',
     license          = 'GPLv2+',
-    url              = 'http://bwohlberg.github.io/jonga',
+    url              = 'https://github.com/bwohlberg/jonga',
     author           = 'Brendt Wohlberg',
     author_email     = 'brendt@ieee.org',
     data_files       = data,
