@@ -13,10 +13,10 @@ class TestSet01(object):
         ct.start()
         rec = re.compile('^[^\.]*.[^\.]*')
         ct.stop()
-        assert(ct.graph() is not None)
-        assert(str(ct) != '')
+        assert ct.graph() is not None
+        assert str(ct) != ''
         ct.reset()
-        assert(str(ct) == '')
+        assert str(ct) == ''
 
 
     def test_02(self):
@@ -24,9 +24,9 @@ class TestSet01(object):
                                     grpflt='^[^\.]*')) as cct:
             rec = re.compile('^[^\.]*.[^\.]*')
         ct = cct.calltracer()
-        assert(str(ct) != '')
+        assert str(ct) != ''
         ct.reset()
-        assert(str(ct) == '')
+        assert str(ct) == ''
 
 
     def test_03(self):
@@ -35,7 +35,7 @@ class TestSet01(object):
         os.close(fd)
         with jonga.ContextCallTracer(ct, pth):
             rec = re.compile('^[^\.]*.[^\.]*')
-        assert(os.path.getsize(pth) > 0)
+        assert os.path.getsize(pth) > 0
         os.remove(pth)
 
 
@@ -45,5 +45,5 @@ class TestSet01(object):
         os.close(fd)
         with jonga.ContextCallTracer(ct, pth, rmsz=True):
             rec = re.compile('^[^\.]*.[^\.]*')
-        assert(os.path.getsize(pth) > 0)
+        assert os.path.getsize(pth) > 0
         os.remove(pth)
