@@ -4,13 +4,13 @@
 
 """Call tracing for class method inheritance documentation"""
 
+import os
+import gc
+import inspect
 import re
 import sys
 if sys.version_info < (3, 3):
     raise RuntimeError('Module jonga requires Python version 3.3 or greater')
-import os
-import gc
-import inspect
 
 import pygraphviz as pgv
 
@@ -53,7 +53,7 @@ def current_function(frame):
                if getattr(referer, "__code__", None) is code and
                inspect.getclosurevars(referer).nonlocals.items() <=
                frame.f_locals.items()]
-        if len(lst) > 0:
+        if lst:
             return lst[0]
         else:
             return None
@@ -527,7 +527,7 @@ class ContextCallTracer(object):
 
 
 
-    def __exit__(self, type, value, traceback):
+    def __exit__(self, extype, value, traceback):
         """
         Stop the call tracer and return True if no exception was raised
         within the 'with' block, otherwise return False.
@@ -536,7 +536,7 @@ class ContextCallTracer(object):
         self.ct.stop()
         if self.pth is not None:
             self.ct.graph(self.pth, **self.kwargs)
-        if type:
+        if extype:
             return False
         else:
             return True
