@@ -9,12 +9,12 @@ if __name__ == "__main__":
     # Construct call tracer object with groups defined by the first
     # part (i.e. before the first '.') of the fully qualified name of
     # the function
-    ct = jonga.CallTracer(grpflt='^[^\.]*')
+    ct = jonga.CallTracer(grpflt=r'^[^\.]*')
     # Start call tracing
     ct.start()
 
     # Call regex compile function
-    rc = re.compile('^[^\.]*.[^\.]*')
+    rc = re.compile(r'^[^\.]*.[^\.]*')
 
     # Stop tracing
     ct.stop()

@@ -48,7 +48,7 @@ if __name__ == "__main__":
     # functions/methods within module xmpl and with groups defined by
     # the first part (i.e. before the first '.') of the fully
     # qualified name of the function
-    ct = jonga.CallTracer(srcmodflt='^xmpl', grpflt='^[^\.]*')
+    ct = jonga.CallTracer(srcmodflt='^xmpl', grpflt=r'^[^\.]*')
     # Start call tracing
     ct.start()
 
@@ -61,4 +61,3 @@ if __name__ == "__main__":
     ct.graph('example1c.dot')
     # Write graph in SVG format
     ct.graph('example1c.svg')
-

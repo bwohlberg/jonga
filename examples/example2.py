@@ -13,7 +13,7 @@ if __name__ == "__main__":
     # the first part (i.e. before the first '.') of the fully
     # qualified name of the function *after* the string substitution
     ct = jonga.CallTracer(srcmodflt='^xmpl', fnmsub=('^xmpl.', ''),
-                          grpflt='^[^\.]*')
+                          grpflt=r'^[^\.]*')
     # Construct object from example class
     c = xmpl.C()
     # Start call tracing
@@ -32,7 +32,7 @@ if __name__ == "__main__":
 
     # Define custom colour generation function by calling default
     # colour generation function with different parameters
-    clrgen = lambda n : jonga.CallTracer._clrgen(n, 0.330, 0.330)
+    clrgen = lambda n: jonga.CallTracer._clrgen(n, 0.330, 0.330)
     # Write graph in dot format with custom colours
     ct.graph('example2b.dot', clrgen=clrgen)
     # Write graph in SVG format with custom colours
