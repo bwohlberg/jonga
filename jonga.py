@@ -15,7 +15,7 @@ if sys.version_info < (3, 3):
 import pygraphviz as pgv
 
 
-__version__ = '0.0.4'
+__version__ = '0.0.5b1'
 __author__ = """Brendt Wohlberg <brendt@ieee.org>"""
 
 
