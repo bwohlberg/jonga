@@ -61,15 +61,20 @@ Under Ubuntu Linux 18.04, this requirement can be installed by the command
   sudo apt-get install python3-pygraphviz
 
 
+
 Optional
 ^^^^^^^^
+
+Package `matplotlib <http://matplotlib.org>`_ is required to run the
+included `Jupyter Notebook <http://jupyter.org/>`_ examples.
 
 Packages `pytest <https://github.com/pytest-dev/pytest>`_ and
 `pytest-runner <https://github.com/pytest-dev/pytest-runner>`_ are
 required to run the tests (``python setup.py test`` or ``python3
-setup.py test``, depending on the operating system). Packages `sphinx
-<http://www.sphinx-doc.org/en/stable>`_, `sphinx-bootstrap-theme
-<http://ryan-roemer.github.io/sphinx-bootstrap-theme/README.html>`_,
+setup.py test``, depending on the operating system).
+
+Packages `sphinx <http://www.sphinx-doc.org/en/stable>`_,
+`sphinx-bootstrap-theme <http://ryan-roemer.github.io/sphinx-bootstrap-theme/README.html>`_,
 and `numpydoc <https://github.com/numpy/numpydoc>`_ are required to
 build the documentation (``python setup.py build_sphinx`` or
 ``python3 setup.py build_sphinx``, depending on the operating system).
@@ -101,9 +106,11 @@ shell
 from the root directory of the package.
 
 
-Jupyter notebook versions of the example scripts are also included in
-the ``examples`` directory, and can be viewed online via `nbviewer
-<http://nbviewer.jupyter.org/github/bwohlberg/jonga/blob/master/index.ipynb>`_, or run interactively at `binder <https://mybinder.org/v2/gh/bwohlberg/jonga/master?filepath=index.ipynb>`_.
+`Jupyter Notebook <http://jupyter.org/>`__ versions of the example scripts are
+also included in the ``examples`` directory, and can be viewed online via
+`nbviewer <http://nbviewer.jupyter.org/github/bwohlberg/jonga/blob/master/index.ipynb>`_,
+or run interactively at
+`binder <https://mybinder.org/v2/gh/bwohlberg/jonga/master?filepath=index.ipynb>`_.
 
 
 
