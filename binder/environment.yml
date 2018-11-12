@@ -1,0 +1,8 @@
+channels:
+  - conda-forge
+dependencies:
+  - python
+  - pygraphviz
+  - matplotlib
+  - pip:
+    - git+https://github.com/bwohlberg/jonga
