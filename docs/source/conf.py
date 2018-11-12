@@ -251,7 +251,7 @@ latex_documents = [
 mathjax_path = 'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML'
 
 # Intersphinx mapping
-intersphinx_mapping = {'http://docs.python.org/': None}
+intersphinx_mapping = {'https://docs.python.org/3/': None}
 
 numpydoc_show_class_members = False
 
