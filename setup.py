@@ -51,6 +51,7 @@ setup(
     author           = 'Brendt Wohlberg',
     author_email     = 'brendt@ieee.org',
     data_files       = data,
+    python_requires  = '>= 3.3',
     setup_requires   = ['pytest-runner'],
     tests_require    = ['pytest'],
     install_requires = install_requires,
