@@ -3,6 +3,12 @@ Jonga Release Notes
 ====================
 
 
+Version 0.0.4   (2018-11-12)
+----------------------------
+
+- Various minor fixes and improvements
+
+
 Version 0.0.3   (2017-11-04)
 ----------------------------
 

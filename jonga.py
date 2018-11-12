@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright (C) 2017 by Brendt Wohlberg <brendt@ieee.org>
+# Copyright (C) 2017-2018 by Brendt Wohlberg <brendt@ieee.org>
 # All rights reserved. GPLv2+ License.
 
 """Call tracing for class method inheritance documentation"""
@@ -15,7 +15,7 @@ if sys.version_info < (3, 3):
 import pygraphviz as pgv
 
 
-__version__ = '0.0.4b1'
+__version__ = '0.0.4'
 __author__ = """Brendt Wohlberg <brendt@ieee.org>"""
 
 
