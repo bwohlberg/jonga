@@ -48,6 +48,9 @@ setup(
     setup_requires   = [],
     tests_require    = ['pytest', 'pytest-runner'],
     install_requires = ['pygraphviz'],
+    extras_require   = {
+        'tests': ['pytest', 'pytest-runner'],
+        'docs': [ 'sphinx', 'numpydoc', 'sphinx_bootstrap_theme']},
     classifiers = [
     'Development Status :: 4 - Beta',
     'Intended Audience :: Developers',
