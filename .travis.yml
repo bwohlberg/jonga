@@ -22,8 +22,9 @@ before_install:
   - conda info -a
 
 install:
-  - conda create --yes -q -n test-env python=$TRAVIS_PYTHON_VERSION pytest
+  - conda create --yes -q -n test-env python=$TRAVIS_PYTHON_VERSION
   - source activate test-env
+  - conda install -c conda-forge pytest pytest-runner
   - pip install pygraphviz
   - python setup.py build
   - python setup.py install
