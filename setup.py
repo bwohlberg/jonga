@@ -30,13 +30,6 @@ function calls within a block of Python code, intended for inclusion
 in Sphinx package documentation.
 """
 
-on_rtd = os.environ.get('READTHEDOCS') == 'True'
-if on_rtd:
-    print("Building on ReadTheDocs")
-    install_requires = ['pygraphviz']
-else:
-    install_requires = ['pygraphviz']
-
 
 setup(
     name             = name,
@@ -52,9 +45,9 @@ setup(
     author_email     = 'brendt@ieee.org',
     data_files       = data,
     python_requires  = '>= 3.3',
-    setup_requires   = ['pytest-runner'],
-    tests_require    = ['pytest'],
-    install_requires = install_requires,
+    setup_requires   = [],
+    tests_require    = ['pytest', 'pytest-runner'],
+    install_requires =  ['pygraphviz'],
     classifiers = [
     'Development Status :: 4 - Beta',
     'Intended Audience :: Developers',
@@ -64,6 +57,7 @@ setup(
     'Programming Language :: Python :: 3.4',
     'Programming Language :: Python :: 3.5',
     'Programming Language :: Python :: 3.6',
+    'Programming Language :: Python :: 3.7',
     'Topic :: Utilities',
     'Topic :: Software Development :: Documentation'
     ],
