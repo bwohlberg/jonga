@@ -13,6 +13,9 @@ Jonga
 .. image:: https://badge.fury.io/py/jonga.svg
     :target: https://badge.fury.io/py/jonga
     :alt: PyPi Release
+.. image:: https://img.shields.io/conda/vn/conda-forge/jonga.svg
+    :target: https://anaconda.org/conda-forge/jonga
+    :alt: Conda Forge Release
 .. image:: https://img.shields.io/pypi/pyversions/jonga.svg
     :target: https://github.com/bwohlberg/jonga
     :alt: Supported Python Versions

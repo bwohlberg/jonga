@@ -34,7 +34,7 @@ permissions, e.g. on Ubuntu Linux
 
 ::
 
-   sudo python setup.py install
+   sudo -H python setup.py install
 
 The procedure for installing from a source package downloaded from `PyPI
 <https://pypi.python.org/pypi/jonga/>`_ is similar.
@@ -42,6 +42,14 @@ The procedure for installing from a source package downloaded from `PyPI
 Note that under Ubuntu Linux, in the commands listed above, ``python``
 and ``pip`` should be replaced with ``python3`` and ``pip3``
 respectively.
+
+
+Jonga can also be installed as a `conda <https://conda.io/docs/>`__ package from the `conda-forge <https://conda-forge.org/>`__ channel
+
+::
+
+   conda install -c conda-forge jonga
+
 
 
 
