@@ -111,9 +111,9 @@ from the root directory of the package.
 
 `Jupyter Notebook <http://jupyter.org/>`__ versions of the example scripts are
 also included in the ``examples`` directory, and can be viewed online via
-`nbviewer <http://nbviewer.jupyter.org/github/bwohlberg/jonga/blob/master/index.ipynb>`_,
+`nbviewer <http://nbviewer.jupyter.org/github/bwohlberg/jonga/blob/master/examples/index.ipynb>`_,
 or run interactively at
-`binder <https://mybinder.org/v2/gh/bwohlberg/jonga/master?filepath=index.ipynb>`_.
+`binder <https://mybinder.org/v2/gh/bwohlberg/jonga/master?filepath=examples/index.ipynb>`_.
 
 
 
