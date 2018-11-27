@@ -23,7 +23,7 @@ Jonga
     :target: https://github.com/bwohlberg/jonga
     :alt: Package License
 .. image:: http://mybinder.org/badge.svg
-    :target: https://mybinder.org/v2/gh/bwohlberg/jonga/master?filepath=index.ipynb
+    :target: https://mybinder.org/v2/gh/bwohlberg/jonga/master?filepath=examples/index.ipynb
     :alt: Binder
 |
 
