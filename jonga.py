@@ -71,12 +71,12 @@ def function_qname(fnc):
     Parameters
     ----------
     fnc : function reference
-    A function reference
+      A function reference
 
     Returns
     -------
     fqn : string
-    The qualified name the function
+      The qualified name the function
     """
 
     if fnc is None:
@@ -145,8 +145,7 @@ class CallTracer(object):
 
     def __init__(self, srcmodflt=None, dstmodflt=None, srcqnmflt=None,
                  dstqnmflt=None, fnmsub=None, grpflt=None, lnksub=None):
-        """Initialise a CallTracer object.
-
+        """
         Parameters
         ----------
         srcmodflt : None or regex string, optional (default None)
@@ -495,8 +494,6 @@ class ContextCallTracer(object):
 
     def __init__(self, ct, pth=None, **kwargs):
         """
-        Initialise context manager.
-
         Parameters
         ----------
         ct : class:`CallTracer` object
