@@ -10,10 +10,16 @@ Jonga
 .. image:: https://badge.fury.io/py/jonga.svg
     :target: https://badge.fury.io/py/jonga
     :alt: PyPi Release
+.. image:: https://static.pepy.tech/personalized-badge/jonga?period=total&left_color=grey&right_color=brightgreen&left_text=downloads
+    :target: https://pepy.tech/project/jonga
+    :alt: PyPi Downloads
 .. image:: https://img.shields.io/conda/vn/conda-forge/jonga.svg
     :target: https://anaconda.org/conda-forge/jonga
     :alt: Conda Forge Release
-.. image:: https://img.shields.io/pypi/pyversions/jonga.svg
+.. image:: https://img.shields.io/conda/dn/conda-forge/jonga.svg
+    :target: https://anaconda.org/conda-forge/jonga
+    :alt:  Conda Forge Downloads
+.. image:: https://img.shields.io/badge/python-3.3+-green.svg
     :target: https://github.com/bwohlberg/jonga
     :alt: Supported Python Versions
 .. image:: https://img.shields.io/pypi/l/jonga.svg
