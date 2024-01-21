@@ -7,4 +7,4 @@ include LICENSE
 include requirements.txt
 
 recursive-include examples *.py *.ipynb
-recursive-include docs Makefile docs_requirements.txt *.py *.rst *.css
+recursive-include docs Makefile requirements.txt *.py *.rst *.css
