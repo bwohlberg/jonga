@@ -25,7 +25,8 @@ call vizualizations for inclusion within package documentation. In
 particular, none of these other packages correctly identifies method
 classes within a hierarchy of derived classes.
 
-# Requirements
+
+## Requirements
 
 The primary requirement is Python 3.3 or greater (this packages is *not*
 compatible with Python 2), imposed by the use of the `__qualname__`
@@ -43,7 +44,8 @@ this requirement can be installed by the command
 
     sudo apt-get install python3-pygraphviz
 
-## Optional
+
+### Optional
 
 Package [matplotlib](http://matplotlib.org) is required to run the
 included [Jupyter Notebook](http://jupyter.org/) examples.
@@ -59,7 +61,8 @@ and [numpydoc](https://github.com/numpy/numpydoc) are required to build
 the documentation (`python setup.py build_sphinx` or
 `python3 setup.py build_sphinx`, depending on the operating system).
 
-# Usage
+
+## Usage
 
 Scripts illustrating usage of the package can be found in the `examples`
 directory of the source distribution. These examples can be run from the
@@ -82,7 +85,8 @@ via
 or run interactively at
 [binder](https://mybinder.org/v2/gh/bwohlberg/jonga/master?filepath=examples/index.ipynb).
 
-# Documentation
+
+## Documentation
 
 Documentation is available online at [Read the
 Docs](http://jonga.rtfd.io/), or can be built from the root directory of
@@ -93,13 +97,15 @@ the source distribution by the command
 in which case the HTML documentation can be found in the
 `build/sphinx/html` directory (the top-level document is `index.html`).
 
-# Contact
+
+## Contact
 
 Please submit bug reports, comments, etc. to <brendt@ieee.org>. Bugs and
 feature requests can also be reported via the [GitHub Issues
 interface](https://github.com/bwohlberg/jonga/issues).
 
-# License
+
+## License
 
 This package is made available under the terms of the GNU General Public
 License as published by the Free Software Foundation; either version 2
