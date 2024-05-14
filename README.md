@@ -1,26 +1,15 @@
----
-title: Jonga
----
-
 [![Build Status](https://travis-ci.org/bwohlberg/jonga.svg?branch=master)](https://travis-ci.org/bwohlberg/jonga)
-
 [![Documentation Status](https://readthedocs.org/projects/jonga/badge/?version=latest)](http://jonga.readthedocs.io/en/latest/?badge=latest)
-
 [![PyPi Release](https://badge.fury.io/py/jonga.svg)](https://badge.fury.io/py/jonga)
-
 [![PyPi Downloads](https://static.pepy.tech/personalized-badge/jonga?period=total&left_color=grey&right_color=brightgreen&left_text=downloads)](https://pepy.tech/project/jonga)
-
 [![Conda Forge Release](https://img.shields.io/conda/vn/conda-forge/jonga.svg)](https://anaconda.org/conda-forge/jonga)
-
 [![Conda Forge Downloads](https://img.shields.io/conda/dn/conda-forge/jonga.svg)](https://anaconda.org/conda-forge/jonga)
-
 [![Supported Python Versions](https://img.shields.io/badge/python-3.3+-green.svg)](https://github.com/bwohlberg/jonga)
-
 [![Package License](https://img.shields.io/pypi/l/jonga.svg)](https://github.com/bwohlberg/jonga)
-
 [![Binder](http://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/bwohlberg/jonga/master?filepath=examples/index.ipynb)
 
-| 
+
+# Jonga
 
 Jonga is a Python package that generates a directed graph representing
 function calls within a block of Python code, intended for inclusion in
