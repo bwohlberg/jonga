@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright (C) 2017-2018 by Brendt Wohlberg <brendt@ieee.org>
+# Copyright (C) 2017-2018,2024 by Brendt Wohlberg <brendt@ieee.org>
 # All rights reserved. GPLv2+ License.
 
 """Call tracing for class method inheritance documentation"""
@@ -65,8 +65,8 @@ def current_function(frame):
 
 def function_qname(fnc):
     """
-    Get qualified name of a function (the fully qualified name
-    without the module prefix)
+    Get qualified name of a function (the fully qualified name without
+    the module prefix).
 
     Parameters
     ----------
@@ -88,7 +88,7 @@ def function_qname(fnc):
 
 def function_fqname(fnc):
     """
-    Get fully qualified name of a function
+    Get fully qualified name of a function.
 
     Parameters
     ----------
@@ -140,7 +140,7 @@ def current_module_name(frame):
 
 class CallTracer(object):
     """
-    Manage construction of a call graph for methods within a class hierarchy
+    Manage construction of a call graph for methods within a class hierarchy.
     """
 
     def __init__(self, srcmodflt=None, dstmodflt=None, srcqnmflt=None,
@@ -197,7 +197,7 @@ class CallTracer(object):
         # Compiled regex for called function qname filtering
         self.dstqnmflt = re.compile(dstqnmflt)
 
-        # Regex pair for function name replacment
+        # Regex pair for function name replacement
         self.fnmsub = fnmsub
         # Regex for constructing function grouping string
         if grpflt is None:
@@ -211,11 +211,10 @@ class CallTracer(object):
         self.reset()
 
 
-
     def reset(self):
         """
-        Reset record of called functions, deleting all accumulated
-        call information
+        Reset record of called functions, deleting all accumulated call
+        information.
         """
 
         # Dict associating function name with list containing counts
@@ -228,10 +227,9 @@ class CallTracer(object):
         self.group = {}
 
 
-
     def _trace(self, frame, event, arg):
         """
-        Build a record of called functions using the trace mechanism
+        Build a record of called functions using the trace mechanism.
         """
 
         # Return if this is not a function call
@@ -295,16 +293,14 @@ class CallTracer(object):
                 self.calls[key] = 1
 
 
-
     def start(self):
-        """Start tracing"""
+        """Start tracing."""
 
         sys.settrace(self._trace)
 
 
-
     def stop(self):
-        """Stop tracing"""
+        """Stop tracing."""
 
         # Stop tracing
         sys.settrace(None)
@@ -326,10 +322,9 @@ class CallTracer(object):
 
 
 
-
     @staticmethod
     def _clrgen(n, h0, hr):
-        """Default colour generating function
+        """Default colour generating function.
 
         Parameters
         ----------
@@ -354,17 +349,16 @@ class CallTracer(object):
         return clst
 
 
-
     def graph(self, fnm=None, size=None, fntsz=None, fntfm=None, clrgen=None,
               rmsz=False, prog='dot'):
         """
-        Construct call graph
+        Construct call graph.
 
         Parameters
         ----------
         fnm : None or string, optional (default None)
-          Filename of graph file to be written. File type is determined by
-          the file extentions (e.g. dot for 'graph.dot' and SVG for
+          Filename of graph file to be written. File type is determined
+          by the file extensions (e.g. dot for 'graph.dot' and SVG for
           'graph.svg'). If None, a file is not written.
         size : string or None, optional (default None)
           Graph image size specification string.
@@ -466,9 +460,8 @@ class CallTracer(object):
         return g
 
 
-
     def __str__(self):
-        """Get string representation"""
+        """Get string representation."""
 
         s = ''
         for k in self.fncts:
@@ -511,7 +504,6 @@ class ContextCallTracer(object):
         self.kwargs = kwargs
 
 
-
     def __enter__(self):
         """
         Reset and start call tracer and return this ContextCallTracer
@@ -521,7 +513,6 @@ class ContextCallTracer(object):
         self.ct.reset()
         self.ct.start()
         return self
-
 
 
     def __exit__(self, extype, value, traceback):
@@ -537,7 +528,6 @@ class ContextCallTracer(object):
             return False
         else:
             return True
-
 
 
     def calltracer(self):
