@@ -17,7 +17,7 @@ with similar goals, including
 
 -   [pycallgraph](https://github.com/gak/pycallgraph)
 -   [pyan](https://github.com/davidfraser/pyan)
--   [snakefood](https://bitbucket.org/blais/snakefood/src)
+-   [snakefood](https://github.com/blais/snakefood)
 
 but none of them is entirely suitable for generating function/method
 call vizualizations for inclusion within package documentation. In

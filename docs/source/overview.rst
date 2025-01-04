@@ -8,7 +8,7 @@ alternative packages with similar goals, including
 
 * `pycallgraph <https://github.com/gak/pycallgraph>`_
 * `pyan <https://github.com/davidfraser/pyan>`_
-* `snakefood <https://bitbucket.org/blais/snakefood/src>`_
+* `snakefood <https://github.com/blais/snakefood>`_
 
 but none of them is entirely suitable for generating function/method call
 vizualizations for inclusion within package documentation. In
