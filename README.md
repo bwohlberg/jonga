@@ -1,4 +1,3 @@
-[![Build Status](https://travis-ci.org/bwohlberg/jonga.svg?branch=master)](https://travis-ci.org/bwohlberg/jonga)
 [![Documentation Status](https://readthedocs.org/projects/jonga/badge/?version=latest)](http://jonga.readthedocs.io/en/latest/?badge=latest)
 [![PyPi Release](https://badge.fury.io/py/jonga.svg)](https://badge.fury.io/py/jonga)
 [![PyPi Downloads](https://static.pepy.tech/personalized-badge/jonga?period=total&left_color=grey&right_color=brightgreen&left_text=downloads)](https://pepy.tech/project/jonga)
@@ -39,10 +38,7 @@ no obvious replacement for
 which was introduced in Python 3.3.
 
 The other major requirement is
-[pygraphviz](https://pygraphviz.github.io/). Under Ubuntu Linux 18.04,
-this requirement can be installed by the command
-
-    sudo apt-get install python3-pygraphviz
+[pygraphviz](https://pygraphviz.github.io/).
 
 
 ### Optional
@@ -50,16 +46,13 @@ this requirement can be installed by the command
 Package [matplotlib](http://matplotlib.org) is required to run the
 included [Jupyter Notebook](http://jupyter.org/) examples.
 
-Packages [pytest](https://github.com/pytest-dev/pytest) and
-[pytest-runner](https://github.com/pytest-dev/pytest-runner) are
-required to run the tests (`python setup.py test` or
-`python3 setup.py test`, depending on the operating system).
+Package [pytest](https://github.com/pytest-dev/pytest) is
+required to run the tests (`pytest` in the repository root directory).
 
 Packages [sphinx](http://www.sphinx-doc.org/en/stable),
 [sphinx-bootstrap-theme](http://ryan-roemer.github.io/sphinx-bootstrap-theme/README.html),
 and [numpydoc](https://github.com/numpy/numpydoc) are required to build
-the documentation (`python setup.py build_sphinx` or
-`python3 setup.py build_sphinx`, depending on the operating system).
+the documentation (`make html` in the `docs` directory).
 
 
 ## Usage
@@ -68,7 +61,7 @@ Scripts illustrating usage of the package can be found in the `examples`
 directory of the source distribution. These examples can be run from the
 root directory of the package by, for example
 
-    python3 examples/example1.py
+    python examples/example1.py
 
 To run these scripts prior to installing the package it will be
 necessary to first set the `PYTHONPATH` environment variable to include
@@ -89,10 +82,10 @@ or run interactively at
 ## Documentation
 
 Documentation is available online at [Read the
-Docs](http://jonga.rtfd.io/), or can be built from the root directory of
+Docs](http://jonga.rtfd.io/), or can be built from the `docs` directory of
 the source distribution by the command
 
-    python3 setup.py build_sphinx
+    make html
 
 in which case the HTML documentation can be found in the
 `build/sphinx/html` directory (the top-level document is `index.html`).
@@ -100,8 +93,7 @@ in which case the HTML documentation can be found in the
 
 ## Contact
 
-Please submit bug reports, comments, etc. to <brendt@ieee.org>. Bugs and
-feature requests can also be reported via the [GitHub Issues
+Please submit bug reports, comments, etc. via the [GitHub Issues
 interface](https://github.com/bwohlberg/jonga/issues).
 
 

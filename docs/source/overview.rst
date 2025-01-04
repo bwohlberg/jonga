@@ -28,7 +28,7 @@ be run from the root directory of the package by, for example
 
 ::
 
-   python3 examples/example1.py
+   python examples/example1.py
 
 
 To run these scripts prior to installing the package it will be
@@ -50,7 +50,8 @@ from the root directory of the package.
 Contact
 -------
 
-Please submit bug reports, comments, etc. to brendt@ieee.org.
+Please submit bug reports, comments, etc. via the `GitHub Issues
+interface <https://github.com/bwohlberg/jonga/issues>`__.
 
 
 

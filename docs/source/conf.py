@@ -58,7 +58,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Jonga'
-copyright = u'2017-2018, Brendt Wohlberg'
+copyright = u'2017-2025, Brendt Wohlberg'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -254,7 +254,9 @@ latex_documents = [
 mathjax_path = 'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML'
 
 # Intersphinx mapping
-intersphinx_mapping = {'https://docs.python.org/3/': None}
+intersphinx_mapping = {
+    "python": ("https://docs.python.org/3/", None),
+}
 
 numpydoc_show_class_members = False
 

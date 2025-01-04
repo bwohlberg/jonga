@@ -67,12 +67,6 @@ there is no obvious replacement for `inspect.getclosurevars
 which was introduced in Python 3.3.
 
 The other major requirement is `pygraphviz <https://pygraphviz.github.io/>`_.
-Under Ubuntu Linux 18.04, this requirement can be installed by the command
-
-::
-
-  sudo apt-get install python3-pygraphviz
-
 
 
 
@@ -82,14 +76,11 @@ Optional
 Package `matplotlib <http://matplotlib.org>`_ is required to run the
 included `Jupyter Notebook <http://jupyter.org/>`_ examples.
 
-Packages `pytest <https://github.com/pytest-dev/pytest>`_ and
-`pytest-runner <https://github.com/pytest-dev/pytest-runner>`_ are
-required to run the tests (``python setup.py test`` or ``python3
-setup.py test``, depending on the operating system).
+Package `pytest <https://github.com/pytest-dev/pytest>`_ is
+required to run the tests (``pytest`` in the in the repository root directory).
 
 Packages `sphinx <http://www.sphinx-doc.org/en/stable>`_,
 `sphinx-bootstrap-theme
 <http://ryan-roemer.github.io/sphinx-bootstrap-theme/README.html>`_,
 and `numpydoc <https://github.com/numpy/numpydoc>`_ are required to
-build the documentation (``python setup.py build_sphinx`` or
-``python3 setup.py build_sphinx``, depending on the operating system).
+build the documentation (``make html`` in the ``docs`` directory).
